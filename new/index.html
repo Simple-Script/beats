@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song</title>
+    <style>
+        #buttonContainer {
+            margin-top: 20px;
+        }
+        button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+  <h1>"Wock"</h1>
+    <input type="text" id="searchInput" placeholder="Search for buttons..." onkeyup="filterButtons()">
+    <div id="buttonContainer">
+        <a href="https://simple-script.github.io/beats/new"><button class="button">Subway Explosions feat. XXI Murderous and Tiny Watercraft- "Wock"</button></a>
+    </div>
+
+    <script>
+        function filterButtons() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(input)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
